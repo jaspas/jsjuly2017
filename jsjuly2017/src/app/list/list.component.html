@@ -28,49 +28,25 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+
+    <tr *ngFor="let jumpstarter of jumpstarters">
+
       <td>
+
         <div class="item">
           <img src="http://2.bp.blogspot.com/-nXak3-M8QG4/ULtEsnBI0RI/AAAAAAAAAOA/7uEYy1oExZc/s1600/black-desktop-computer.jpg" />
         </div>
       </td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
+      <td>{{jumpstarter.firstname}}</td>
+      <td>{{jumpstarter.lastname}}</td>
+      <td>{{jumpstarter.jumpstart}}</td>
       <td>
         <img src="../../assets/flags.png" />
 
       </td>
     </tr>
-    <tr>
-      <td>
-        <div class="item">
-          <img src="http://2.bp.blogspot.com/-nXak3-M8QG4/ULtEsnBI0RI/AAAAAAAAAOA/7uEYy1oExZc/s1600/black-desktop-computer.jpg" />
-        </div>
-      </td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>
-        <div class="item">
-          <img src="http://flags.fmcdn.net/data/flags/w1160/ch.png" />
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="item">
-          <img src="http://2.bp.blogspot.com/-nXak3-M8QG4/ULtEsnBI0RI/AAAAAAAAAOA/7uEYy1oExZc/s1600/black-desktop-computer.jpg" />
-        </div>
-      </td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>Otto</td>
-      <td>
-        <div class="item">
-          <img src="http://flags.fmcdn.net/data/flags/w1160/de.png" />
-        </div>
-      </td>
-    </tr>
+
+
+
   </tbody>
 </table>
