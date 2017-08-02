@@ -1,0 +1,12 @@
+.pers-img {
+  margin:auto;
+  display: block;
+  padding-bottom: 30px;
+}
+
+.list-group {
+  width: 50%;
+  padding-bottom: 30px;
+  margin: auto;
+  display: block;
+}
