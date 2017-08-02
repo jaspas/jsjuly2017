@@ -1,5 +1,10 @@
 <p>
-  Hallo WELT
 </p>
 
+<div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.firstname }}</div>
+
+
 <img src="assets/Degu.jpg" width=300/>
+
+<input [(ngModel)]="jumpstarter" value=""/> {{ jumpstarter }}
+<button (click)="addJumpstarter()">Add</button>
