@@ -1,0 +1,26 @@
+div{
+  margin-bottom: 10px;
+}
+
+.flag {
+    display: inline-block;
+    width: 16px;
+    height: 11px;
+    background: url('../../assets/flags.png') 0 0;
+}
+
+.flag.flag-at {
+    background-position: 0 0;
+}
+
+.flag.flag-de {
+    background: 0 -11px;
+}
+
+.flag.flag-ru {
+    background-position: -16px -11px;
+}
+
+.flag.flag-ch {
+    background-position: -16px 0;
+}
