@@ -9,7 +9,7 @@ import { PlaygroundComponent } from './playground/playground.component';
   declarations: [
     AppComponent,
     PlaygroundComponent,
-    AddComponent
+    AddComponent,
     DetailpageComponent
   ],
   imports: [
