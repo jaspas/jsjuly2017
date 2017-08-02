@@ -1,0 +1,25 @@
+body {
+  margin: 50px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.item {
+  width: 50px;
+  min-height: 50px;
+  max-height: auto;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+}
+
+.btn-group {
+  float: right;
+}
+
+#listControlHeader {
+  display: inline;
+}
