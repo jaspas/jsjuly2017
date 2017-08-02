@@ -1,7 +1,8 @@
-.pers-img {
-  margin:auto;
-  display: block;
-  padding-bottom: 30px;
+img {
+  display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
 }
 
 .list-group {
@@ -9,4 +10,8 @@
   padding-bottom: 30px;
   margin: auto;
   display: block;
+}
+
+.picture-flag {
+  text-align: center;
 }

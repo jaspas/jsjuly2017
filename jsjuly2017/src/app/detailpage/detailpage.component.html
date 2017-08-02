@@ -1,13 +1,19 @@
 
- <img class="pers-img" src="../../assets/HomanSarwary.jpg" alt="Homan" style="width:200px;height:300px;">
+<div class="picture-flag">
 
+      <img class="pers-img" src="../../assets/{{jumpstarter.picture}}" alt="Homan" style="width:200px;height:300px;">
+
+      <img src="../assets/transp.png" class="flag flag-{{jumpstarter.country}}" alt="Flagge" width="300"/>
+  <div style="clear:both"></div>
+</div>
 
 <ul class="list-group">
-  <li class="list-group-item">Homan Sarwary</li>
-  <li class="list-group-item">+49 176 722 47 486</li>
-  <li class="list-group-item">homan.sarwary@accenture.com</li>
-  <li class="list-group-item">Deutschland</li>
-  <li class="list-group-item">ASG</li>
-  <li class="list-group-item">Hamburg Office</li>
-  <li class="list-group-item">Jump Start Java</li>
+  <li class="list-group-item">{{jumpstarter.firstname}} {{jumpstarter.lastname}}</li>
+  <li class="list-group-item">{{jumpstarter.telephone}}</li>
+  <li class="list-group-item">{{jumpstarter.email}}</li>
+  <!-- <li class="list-group-item">
+<img src="../assets/transp.png" class="flag flag-{{jumpstarter.country}}" alt="Flagge" width="200"/>
+  </li> -->
+  <li class="list-group-item">{{jumpstarter.homeoffice}}</li>
+  <li class="list-group-item">{{jumpstarter.jumpstart}}</li>
 </ul>
