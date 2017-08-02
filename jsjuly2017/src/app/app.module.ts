@@ -2,15 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+import { DetailpageComponent } from './detailpage/detailpage.component';
+import { AddComponent } from './add/add.component';
 import { PlaygroundComponent } from './playground/playground.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlaygroundComponent,
-    AddComponent
-    DetailpageComponent
+    AddComponent,
+    DetailpageComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule
