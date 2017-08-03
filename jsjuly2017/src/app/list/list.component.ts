@@ -6,11 +6,13 @@ import { Homeoffice } from '../services/homeoffice';
 import { JumpstarterService } from '../services/jumpstarter.service';
 import { HomeofficeService } from '../services/homeoffice.service';
 
+import { RouterModule, Router } from '@angular/router';
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
-    providers: [JumpstarterService,HomeofficeService]
+  providers: [JumpstarterService, HomeofficeService]
 })
 export class ListComponent implements OnInit {
 
@@ -20,11 +22,16 @@ export class ListComponent implements OnInit {
 
   jumpstarter: Jumpstarter;
 
-  constructor(private jumpstarterService: JumpstarterService,private homeofficeService: HomeofficeService) { }
+  constructor(private jumpstarterService: JumpstarterService,
+    private homeofficeService: HomeofficeService,
+    private router: Router) { }
+
+  onSelect(jumpstarter: Jumpstarter) {
+    this.router.navigate(['/details', jumpstarter.id]);
+  }
 
   ngOnInit() {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
-
     this.offices = this.homeofficeService.getHomeoffices();
 
   }
