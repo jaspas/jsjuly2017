@@ -8,7 +8,7 @@ import { Jumpstarter } from '../services/jumpstarter';
 })
 export class AddComponent implements OnInit {
 
-  jumpstarter: Jumpstarter = {firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
+  jumpstarter: Jumpstarter = {id:-1,firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
   jumpstarters: Jumpstarter[] = [];
   homeoffice: string;
   land: string = 'DE';
