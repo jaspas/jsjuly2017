@@ -9,13 +9,15 @@ import { Jumpstarter } from '../services/jumpstarter';
 export class AddComponent implements OnInit {
 
   jumpstarter: Jumpstarter = {firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
-  jumpstarters: Jumpstarter[];
+  jumpstarters: Jumpstarter[] = [];
   homeoffice: string;
-  land: string;
+  land: string = 'DE';
 
   starts : string[] =["Java","ABAP","FICO"];
+  homeoffices: string[] = ["Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg"];
 
   addJumpstarter(){
+    console.log(this.jumpstarter);
     this.jumpstarter.country = this.land;
     this.jumpstarters.push(this.jumpstarter);
     console.log(this.jumpstarters.length);
@@ -23,6 +25,10 @@ export class AddComponent implements OnInit {
 
   dropdownClicked(start: string){
 console.log(start);
+  }
+
+  changeCountry(country){
+    this.land = country;
   }
 
   constructor() { }
