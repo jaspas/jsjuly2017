@@ -43,4 +43,14 @@ export class PlaygroundComponent implements OnInit {
     this.jumpstarters.push(this.jumpstarter);
   }
 
+  test(){
+    var keys = Object.keys(this.jumpstarters)
+
+    for(var i = 0; i < keys.length; i++){
+      console.log(this.jumpstarters[keys[i]]);
+    }
+
+    console.log(keys);
+  }
+
 }
