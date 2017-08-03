@@ -10,7 +10,8 @@ import { JumpstarterService } from '../services/jumpstarter.service';
 })
 export class AddComponent implements OnInit {
 
-  jumpstarter: Jumpstarter = {id:-1,firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
+  initjumpstarter: Jumpstarter = {id:-1,firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
+  jumpstarter: Jumpstarter = this.initjumpstarter;
 //jumpstarters: Jumpstarter[] = this.jumpstarterService.getJumpstarters();
   homeoffice: string;
   land: string = 'DE';
@@ -21,6 +22,9 @@ export class AddComponent implements OnInit {
   addJumpstarter(){
     this.jumpstarter.country = this.land;
     this.jumpstarterService.addJumpstarter(this.jumpstarter);
+    this.jumpstarter = null
+    delete this.jumpstarter;
+    this.jumpstarter = new Jumpstarter;
   }
 
   dropdownClicked(start: string){
