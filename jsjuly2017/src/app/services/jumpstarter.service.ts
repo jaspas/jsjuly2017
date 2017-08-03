@@ -18,6 +18,7 @@ export class JumpstarterService {
     jumpstarter.id = this.getNewId();
     this.jumpstarters.push(jumpstarter);
     console.log(this.jumpstarters.length);
+    return jumpstarter.id;
   }
 
   getJumpstarterById(id) {
@@ -28,7 +29,7 @@ export class JumpstarterService {
     return jumpstarter;
 
   }
-  
+
   getNewId() {
     return <number>
       (this.jumpstarters[this.jumpstarters.length - 1].id + 1);
