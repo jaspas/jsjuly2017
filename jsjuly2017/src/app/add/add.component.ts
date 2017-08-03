@@ -16,14 +16,13 @@ export class AddComponent implements OnInit {
   homeoffice: string;
   land: string = 'DE';
 
+  countries : string[] = ["DE", "AT", "CH", "RU"];
   starts : string[] =["Big Data", "Business Analysis & Testing","H&PS","Infrastructure", "Interactice", "IT Change Management", "Java","PCS","Pega", "PLM", "Sales Forces", "SAP Analytics", "SAP ABAP", "SAP CRM", "SAP FICO", "SAP Fundamentals", "SAP SCM","Talent & HR", "Visualitation"];
   homeoffices: string[] = ["Kronberg", "Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg", "WienVienna", "Zurich"];
 
   addJumpstarter(){
     this.jumpstarter.country = this.land;
     this.jumpstarterService.addJumpstarter(this.jumpstarter);
-    this.jumpstarter = null
-    delete this.jumpstarter;
     this.jumpstarter = new Jumpstarter;
   }
 
