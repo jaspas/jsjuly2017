@@ -8,18 +8,13 @@ import { Jumpstarter } from '../services/jumpstarter';
 })
 export class AddComponent implements OnInit {
 
-  jumpstarter: Jumpstarter = {firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
+  jumpstarter: Jumpstarter = {id:-1, firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
   jumpstarters: Jumpstarter[] = [];
   homeoffice: string;
   land: string = 'DE';
 
-<<<<<<< Updated upstream
   starts : string[] =["Big Data", "Business Analysis & Testing","H&PS","Infrastructure", "Interactice", "IT Change Management", "Java","PCS","Pega", "PLM", "Sales Forces", "SAP Analytics", "SAP ABAP", "SAP CRM", "SAP FICO", "SAP Fundamentals", "SAP SCM","Talent & HR", "Visualitation"];
   homeoffices: string[] = ["Kronberg", "Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg", "WienVienna", "Zurich"];
-=======
-  starts : string[] =["Java","ABAP","FICO"];
-  homeoffices: string[] = ["Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg"];
->>>>>>> Stashed changes
 
   addJumpstarter(){
     console.log(this.jumpstarter);
