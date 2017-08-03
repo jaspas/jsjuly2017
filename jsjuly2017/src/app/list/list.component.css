@@ -22,4 +22,17 @@ img {
 
 #listControlHeader {
   display: inline;
+  margin-bottom:30px;
+}
+
+
+#addButton{
+  max-width: 20%;
+  float: right;
+}
+
+#searchBar{
+
+  max-width: 50%;
+  float: left;
 }
