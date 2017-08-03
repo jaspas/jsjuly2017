@@ -21,7 +21,7 @@ export class JumpstarterService{
   }
 
   getJumpstarterById(id){
-
+      return this.jumpstarters[id];
   }
 
   getNewId()  {

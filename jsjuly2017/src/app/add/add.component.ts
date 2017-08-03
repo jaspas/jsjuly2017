@@ -20,7 +20,6 @@ export class AddComponent implements OnInit {
 
   addJumpstarter(){
     this.jumpstarter.country = this.land;
-    this.jumpstarter.id = this.jumpstarterService.getNewId;
     this.jumpstarterService.addJumpstarter(this.jumpstarter);
   }
 
