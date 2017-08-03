@@ -19,6 +19,5 @@ export class JumpstarterService{
   }
 
   getJumpstarterById(id){
-
   }
 }

@@ -18,6 +18,14 @@
   </div>
 
 </div>
+
+
+
+<div>city:
+  <div *ngFor="let city of offices">{{city.office}}</div>
+</div>
+
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -31,7 +39,6 @@
 
   <!-- Tabelle -->
   <tbody>
-
     <tr *ngFor="let jumpstarter of jumpstarters">
       <td>
         <div class="item">
