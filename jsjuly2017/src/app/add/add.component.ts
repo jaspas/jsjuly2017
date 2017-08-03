@@ -13,8 +13,8 @@ export class AddComponent implements OnInit {
   homeoffice: string;
   land: string = 'DE';
 
-  starts : string[] =["Java","ABAP","FICO"];
-  homeoffices: string[] = ["Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg"];
+  starts : string[] =["Big Data", "Business Analysis & Testing","H&PS","Infrastructure", "Interactice", "IT Change Management", "Java","PCS","Pega", "PLM", "Sales Forces", "SAP Analytics", "SAP ABAP", "SAP CRM", "SAP FICO", "SAP Fundamentals", "SAP SCM","Talent & HR", "Visualitation"];
+  homeoffices: string[] = ["Kronberg", "Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg", "WienVienna", "Zurich"];
 
   addJumpstarter(){
     console.log(this.jumpstarter);
