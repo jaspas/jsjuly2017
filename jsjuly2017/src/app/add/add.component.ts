@@ -55,7 +55,7 @@ export class AddComponent implements OnInit {
   }
 
   addJumpstarterRedirect(){
-    console.log("Redirect");
+
       this.jumpstarter.country = this.land;
       this.id =  this.jumpstarterService.addJumpstarter(this.jumpstarter);
       this.jumpstarter = new Jumpstarter;
