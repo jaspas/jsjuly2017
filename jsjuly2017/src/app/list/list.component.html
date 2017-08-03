@@ -1,3 +1,4 @@
+<!-- Search -->
 <div id="listControlHeader">
   <div class="col-lg-6">
     <div class="input-group">
@@ -9,9 +10,9 @@
     <!-- /input-group -->
   </div>
   <!-- /.col-lg-6 -->
-
   <!-- /.row -->
 
+  <!-- Add + -->
   <div class="btn-group" role="group" aria-label="...">
     <button type="button" class="btn btn-default">Add +</button>
   </div>
@@ -24,13 +25,13 @@
       <th>Last Name</th>
       <th>Jumpstart</th>
       <th>Country</th>
-
     </tr>
   </thead>
+
+  <!-- Tabelle -->
   <tbody>
 
     <tr *ngFor="let jumpstarter of jumpstarters">
-
       <td>
         <div class="item">
           <img src="http://2.bp.blogspot.com/-nXak3-M8QG4/ULtEsnBI0RI/AAAAAAAAAOA/7uEYy1oExZc/s1600/black-desktop-computer.jpg" />
@@ -39,9 +40,9 @@
       <td>{{jumpstarter.firstname}}</td>
       <td>{{jumpstarter.lastname}}</td>
       <td>{{jumpstarter.jumpstart}}</td>
-
-      <td class="flag flag-{{jumpstarter.country}}">&nbsp;</td>
-
+      <td>
+        <div class="flag flag-{{jumpstarter.country}}">&nbsp;</div>
+      </td>
     </tr>
 
   </tbody>
