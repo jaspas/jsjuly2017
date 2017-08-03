@@ -38,12 +38,13 @@ export class ListComponent implements OnInit {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
 
     if(this.search != ""){
+      this.search = this.search.toLowerCase();
+      
       this.jumpstarters = this.jumpstarters.filter(js => {
-        var keys = Object.keys(js);
-        for(var i=0; i < keys.length; i++){
-          if(js[keys[i]].toString().toLowerCase().includes(this.search.toLowerCase())){
-            return true;
-          }
+        if(js.firstname.toLowerCase().includes(this.search) ||
+            js.lastname.toLowerCase().includes(this.search) ||
+            js.jumpstart.toLowerCase().includes(this.search)){
+              return true;
         }
       });
     }
