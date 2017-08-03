@@ -30,6 +30,10 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/details', jumpstarter.id]);
   }
 
+  addJumpstarter(){
+    this.router.navigate(['/add']);
+  }
+
   ngOnInit() {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
     this.offices = this.homeofficeService.getHomeoffices();
