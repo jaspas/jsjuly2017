@@ -3,8 +3,12 @@
 
 <div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.firstname }}</div>
 
+<ul>
+  <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname }}</li>
+</ul>
+
+{{jumpstarters[0].firstname}}
+
+<input [(ngModel)]="jumpstarter.firstname" value=""/> <button (click)=addJumpstarter()>Add</button> {{ jumpstarter.firstname }}
 
 <img src="assets/Degu.jpg" width=300/>
-
-<input [(ngModel)]="jumpstarter" value=""/> {{ jumpstarter }}
-<button (click)="addJumpstarter()">Add</button>
