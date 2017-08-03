@@ -6,19 +6,27 @@ import { JUMPSTARTER } from './mock-jumpstarter';
 @Injectable()
 export class JumpstarterService{
 
-  jumpstarter:Jumpstarter[] = JUMPSTARTER;
+  jumpstarters:Jumpstarter[] = JUMPSTARTER;
 
   constructor() { }
 
   getJumpstarters(){
-    return this.jumpstarter;
+    return this.jumpstarters;
   }
 
   addJumpstarter(jumpstarter:Jumpstarter){
-
+    jumpstarter.id = this.getNewId();
+    this.jumpstarters.push(jumpstarter);
+    console.log(this.jumpstarters.length);    
   }
 
   getJumpstarterById(id){
 
   }
+
+  getNewId()  {
+  return <number>
+  (this.jumpstarters[this.jumpstarters.length-1].id +1);
+  }
+
 }

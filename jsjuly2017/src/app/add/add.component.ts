@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Jumpstarter } from '../services/jumpstarter';
+import { JumpstarterService } from '../services/jumpstarter.service';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  styleUrls: ['./add.component.css'],
+  providers: [JumpstarterService]
 })
 export class AddComponent implements OnInit {
 
-  jumpstarter: Jumpstarter = {firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
-  jumpstarters: Jumpstarter[] = [];
+  jumpstarter: Jumpstarter = {id:-1,firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
+//jumpstarters: Jumpstarter[] = this.jumpstarterService.getJumpstarters();
   homeoffice: string;
   land: string = 'DE';
 
@@ -17,21 +19,20 @@ export class AddComponent implements OnInit {
   homeoffices: string[] = ["Kronberg", "Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg", "WienVienna", "Zurich"];
 
   addJumpstarter(){
-    console.log(this.jumpstarter);
     this.jumpstarter.country = this.land;
-    this.jumpstarters.push(this.jumpstarter);
-    console.log(this.jumpstarters.length);
+    this.jumpstarter.id = this.jumpstarterService.getNewId;
+    this.jumpstarterService.addJumpstarter(this.jumpstarter);
   }
 
   dropdownClicked(start: string){
-console.log(start);
+    console.log(start);
   }
 
   changeCountry(country){
     this.land = country;
   }
 
-  constructor() { }
+  constructor(private jumpstarterService: JumpstarterService) { }
 
   ngOnInit() {
   }
