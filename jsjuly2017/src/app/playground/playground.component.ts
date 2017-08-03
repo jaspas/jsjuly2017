@@ -19,8 +19,6 @@ export class PlaygroundComponent implements OnInit {
   zahl: number = 23;
   jumpstarter: Jumpstarter = {id:99,firstname:"",lastname:"",telephone:"",email:"",jumpstart:"",picture:"",homeoffice:"",country:""};
 
-
-
   constructor(private jumpstarterService: JumpstarterService) { }
 
   ngOnInit() {
