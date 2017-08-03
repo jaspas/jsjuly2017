@@ -4,29 +4,29 @@ import { JUMPSTARTER } from './mock-jumpstarter';
 
 
 @Injectable()
-export class JumpstarterService{
+export class JumpstarterService {
 
-  jumpstarters:Jumpstarter[] = JUMPSTARTER;
+  jumpstarters: Jumpstarter[] = JUMPSTARTER;
 
   constructor() { }
 
-  getJumpstarters(){
+  getJumpstarters() {
     return this.jumpstarters;
   }
 
-  addJumpstarter(jumpstarter:Jumpstarter){
+  addJumpstarter(jumpstarter: Jumpstarter) {
     jumpstarter.id = this.getNewId();
     this.jumpstarters.push(jumpstarter);
     console.log(this.jumpstarters.length);
   }
 
-  getJumpstarterById(id){
-      return this.jumpstarters[id];
+  getJumpstarterById(id) {
+    return this.jumpstarters[id];
   }
 
-  getNewId()  {
-  return <number>
-  (this.jumpstarters[this.jumpstarters.length-1].id +1);
+  getNewId() {
+    return <number>
+      (this.jumpstarters[this.jumpstarters.length - 1].id + 1);
   }
 
 }

@@ -26,6 +26,6 @@ export class ListComponent implements OnInit {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
 
     this.offices = this.homeofficeService.getHomeoffices();
-  this.offices.addHomeoffice("sjadhfsjd");
+
   }
 }
