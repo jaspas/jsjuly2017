@@ -13,17 +13,17 @@
   <!-- Add + -->
   <div id="addButton" class="col-xs-3">
     <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Add +</button>
+      <input type="button" class="btn btn-default" onclick="location.href='add';" value="Add +" />
     </div>
   </div>
 
 </div>
 
 
-
+<!--
 <div>city:
   <div *ngFor="let city of offices">{{city.office}}</div>
-</div>
+</div> -->
 
 
 <table class="table table-hover">
@@ -39,21 +39,21 @@
 
   <!-- Tabelle -->
   <tbody>
-    <tr *ngFor="let jumpstarter of jumpstarters">
+    <tr *ngFor="let jumpstarter of jumpstarters" (click)="onSelect(jumpstarter)">
+
       <td>
-        <div class="item">
-          <img src="http://2.bp.blogspot.com/-nXak3-M8QG4/ULtEsnBI0RI/AAAAAAAAAOA/7uEYy1oExZc/s1600/black-desktop-computer.jpg" />
+        <div class=" item ">
+          <img src="../../assets/{{jumpstarter.picture}}" />
         </div>
       </td>
       <td>{{jumpstarter.firstname}}</td>
       <td>{{jumpstarter.lastname}}</td>
       <td>{{jumpstarter.jumpstart}}</td>
       <td>
-        <div class="flag flag-{{jumpstarter.country}}">&nbsp;</div>
+        <div class="flag flag-{{jumpstarter.country}} ">&nbsp;</div>
       </td>
+
     </tr>
 
   </tbody>
 </table>
-
-<app-detailpage></app-detailpage>
