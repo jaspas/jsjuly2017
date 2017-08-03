@@ -12,7 +12,7 @@ img {
   display: block;
 }
 
-.picture-flag {
+/*.picture-flag {
   text-align: center;
   height: 200px;
   margin: 30px;
@@ -20,4 +20,23 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}*/
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+  width:200px;
+  margin:auto;
+  margin-bottom:30px;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
