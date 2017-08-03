@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
 
   offices: Homeoffice[];
 
-  jumpstarter: Jumpstarter;
+  search: string = "";
 
   constructor(private jumpstarterService: JumpstarterService,
     private homeofficeService: HomeofficeService,
@@ -32,6 +32,21 @@ export class ListComponent implements OnInit {
 
   addJumpstarter(){
     this.router.navigate(['/add']);
+  }
+
+  filter(){
+    this.jumpstarters = this.jumpstarterService.getJumpstarters();
+
+    if(this.search != ""){
+      this.jumpstarters = this.jumpstarters.filter(js => {
+        var keys = Object.keys(js);
+        for(var i=0; i < keys.length; i++){
+          if(js[keys[i]].toString().toLowerCase().includes(this.search.toLowerCase())){
+            return true;
+          }
+        }
+      });
+    }
   }
 
   ngOnInit() {
