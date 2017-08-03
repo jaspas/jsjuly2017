@@ -12,7 +12,7 @@ export const JUMPSTARTER : Jumpstarter[] = [
     homeoffice: "Munich",
     country: "DE"
   },{
-    id: 1,
+      id: 1,
       firstname: "Anton",
       lastname: "Mueller",
       telephone: "+491755766634",
