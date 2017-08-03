@@ -58,10 +58,11 @@
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
-  <button (click)="land='DE'"  type="button" class="btn btn-default">Deutschland</button>
+  <button *ngFor="let country of countries" (click)="land=country" type="button" class="btn btn-default">{{country}}</button>
+  <!-- <button (click)="land='DE'"  type="button" class="btn btn-default">Deutschland</button>
   <button (click)="land='CH'" type="button" class="btn btn-default">Schweiz</button>
   <button (click)="land='AT'" type="button" class="btn btn-default">Österreich</button>
-  <button (click)="land='RU'"type="button" class="btn btn-default">Russland</button>
+  <button (click)="land='RU'"type="button" class="btn btn-default">Russland</button> -->
   <img src="../assets/transp.png" class="flag flag-{{land}}" alt="Flagge" width="200"/>
 </div>
 <br>
