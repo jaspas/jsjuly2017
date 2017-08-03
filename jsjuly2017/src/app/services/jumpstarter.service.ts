@@ -21,9 +21,14 @@ export class JumpstarterService {
   }
 
   getJumpstarterById(id) {
-    return this.jumpstarters[id];
-  }
 
+    let jumpstarter;
+    jumpstarter = this.jumpstarters.find(jumpstarter => jumpstarter.id === id);
+
+    return jumpstarter;
+
+  }
+  
   getNewId() {
     return <number>
       (this.jumpstarters[this.jumpstarters.length - 1].id + 1);

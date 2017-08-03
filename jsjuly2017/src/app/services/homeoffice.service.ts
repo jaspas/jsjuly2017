@@ -14,9 +14,9 @@ export class HomeofficeService {
   }
 
   addHomeoffice() {
-    // TODO
-    // h : Homeoffice = "Munich";
-    // this.homeoffice.push(h);
+    let h : Homeoffice = new Homeoffice;
+    h.office = "Munich";
+    this.homeoffice.push(h);
   }
 
   getHomeofficeById(id) {
