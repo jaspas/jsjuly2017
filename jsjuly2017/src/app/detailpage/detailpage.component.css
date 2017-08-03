@@ -2,7 +2,6 @@ img {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .list-group {
@@ -12,19 +11,9 @@ img {
   display: block;
 }
 
-/*.picture-flag {
-  text-align: center;
-  height: 200px;
-  margin: 30px;
-  background-image: url("../../assets/HomanSarwary.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}*/
-
 .parent {
   position: relative;
-  top: 0;
+  top:  0;
   left: 0;
   width:200px;
   margin:auto;
@@ -39,4 +28,14 @@ img {
   position: absolute;
   bottom: 0px;
   right: 0px;
+}
+
+button {
+  display: block;
+  margin:10px auto 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
 }
