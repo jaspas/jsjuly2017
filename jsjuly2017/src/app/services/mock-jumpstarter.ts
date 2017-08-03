@@ -8,7 +8,7 @@ export const JUMPSTARTER : Jumpstarter[] = [
     telephone: "+491755766634",
     email: "jasmin.paszko@accenture.com",
     jumpstart: "Java April 2012",
-    picture: "HomanSarwary.jpg",
+    picture: "acn.jpg",
     homeoffice: "Munich",
     country: "DE"
   },{
