@@ -1,7 +1,7 @@
 <p>
 </p>
 
-<div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.firstname }}</div>
+<div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.lastname }}</div>
 
 <ul>
   <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname }}</li>
@@ -11,4 +11,7 @@
 
 <input [(ngModel)]="jumpstarter.firstname" value=""/> <button (click)=addJumpstarter()>Add</button> {{ jumpstarter.firstname }}
 
-<img src="assets/Degu.jpg" width=300/>
+<input [(ngModel)]="jumpstarter" value="" /> {{ jumpstarter }}
+<button (click)="addJumpstarter()">Add</button>
+
+<img src="assets/Degu.jpg"/>

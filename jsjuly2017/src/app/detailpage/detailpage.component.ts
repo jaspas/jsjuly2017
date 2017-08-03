@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Jumpstarter } from '../services/jumpstarter';
+import{ JUMPSTARTER } from '../services/mock-jumpstarter';
 
 @Component({
   selector: 'app-detailpage',
@@ -11,5 +13,7 @@ export class DetailpageComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  jumpstarter:Jumpstarter = JUMPSTARTER[0];
 
 }

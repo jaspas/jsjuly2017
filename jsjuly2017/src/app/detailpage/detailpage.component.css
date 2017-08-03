@@ -1,0 +1,17 @@
+img {
+  display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+}
+
+.list-group {
+  width: 50%;
+  padding-bottom: 30px;
+  margin: auto;
+  display: block;
+}
+
+.picture-flag {
+  text-align: center;
+}
