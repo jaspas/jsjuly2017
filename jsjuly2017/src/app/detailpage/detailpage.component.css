@@ -1,8 +1,8 @@
 img {
-  display: inline-block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    height: 30px;
+
 }
 
 .list-group {
@@ -12,6 +12,31 @@ img {
   display: block;
 }
 
-.picture-flag {
+/*.picture-flag {
   text-align: center;
+  height: 200px;
+  margin: 30px;
+  background-image: url("../../assets/HomanSarwary.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}*/
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+  width:200px;
+  margin:auto;
+  margin-bottom:30px;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image2 {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }

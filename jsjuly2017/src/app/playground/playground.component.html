@@ -11,7 +11,7 @@
 
 <input [(ngModel)]="jumpstarter.firstname" value=""/> <button (click)=addJumpstarter()>Add</button> {{ jumpstarter.firstname }}
 
-<input [(ngModel)]="jumpstarter" value="" /> {{ jumpstarter }}
-<button (click)="addJumpstarter()">Add</button>
 
-<img src="assets/Degu.jpg"/>
+<img src="assets/Degu.jpg" width=300/>
+
+<span style="background-color:green;" *ngIf="jumpstarter.firstname"> {{jumpstarter.firstname}}</span>

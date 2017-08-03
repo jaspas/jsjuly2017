@@ -29,44 +29,42 @@
 
 <!-- Jumpstart -->
 <div class="dropdown">
-  <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    JumpStart
+<button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+    <span *ngIf="!jumpstarter.jumpstart">JumpStart</span>
+    <span *ngIf="jumpstarter.jumpstart"> {{jumpstarter.jumpstart}}</span>
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li *ngFor="let start of starts"><a href="" (click)="jumpstarter.jumpstart=start">{{start}}</a></li>
+    <li *ngFor="let start of starts"><span (click)="jumpstarter.jumpstart=start">{{start}}</span></li>
   </ul>
 </div>
 
 <!-- Picture -->
-<!-- <div class="input-group">
+<div class="input-group">
   <span class="input-group-addon" id="basic-addon3">Picture</span>
   <input [(ngModel)]="jumpstarter.picture" type="file" class="form-control" id="picture" aria-describedby="basic-addon3">
-</div> -->
+</div>
 
 <!-- Homeoffice -->
-<!-- <div class="dropdown">
-  <button [(ngModel)]="jumpstarter.homeoffice" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Homeoffice
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <span *ngIf="!jumpstarter.homeoffice">Homeoffice</span>
+    <span *ngIf="jumpstarter.homeoffice"> {{jumpstarter.homeoffice}}</span>
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Kronberg im Taunus</a></li>
-    <li><a href="#">Düsseldorf</a></li>
-    <li><a href="#">Zürich</a></li>
-    <li><a href="#">Berlin</a></li>
-    <li><a href="#">Nürnberg</a></li>
+    <li *ngFor="let homeoffice of homeoffices"><span (click)="jumpstarter.homeoffice=homeoffice">{{homeoffice}}</span></li>
   </ul>
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
-  <button (click)="land=Deutschland"  type="button" class="btn btn-default">Deutschland</button>
-  <button (click)="land=Schweiz" type="button" class="btn btn-default">Schweiz</button>
-  <button (click)="jumpstarter.cou=au" type="button" class="btn btn-default">Österreich</button>
-  <button (click)="land=Russland"type="button" class="btn btn-default">Russland</button>
-  <img src="../assets/transp.png" class="flag flag-de" alt="Flagge" width="200"/>
+  <button (click)="land='DE'"  type="button" class="btn btn-default">Deutschland</button>
+  <button (click)="land='CH'" type="button" class="btn btn-default">Schweiz</button>
+  <button (click)="land='AT'" type="button" class="btn btn-default">Österreich</button>
+  <button (click)="land='RU'"type="button" class="btn btn-default">Russland</button>
+  <img src="../assets/transp.png" class="flag flag-{{land}}" alt="Flagge" width="200"/>
 </div>
 <br>
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Save</button>
-</div> -->
+  <button type="button" class="btn btn-default" (click)="addJumpstarter()">Save</button>
+</div>
