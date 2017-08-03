@@ -2,6 +2,7 @@ import { Jumpstarter } from './jumpstarter';
 
 export const JUMPSTARTER : Jumpstarter[] = [
   {
+    id: 0,
     firstname: "Jasmin",
     lastname: "Paszko",
     telephone: "+491755766634",
@@ -11,6 +12,7 @@ export const JUMPSTARTER : Jumpstarter[] = [
     homeoffice: "Munich",
     country: "DE"
   },{
+    id: 1,
       firstname: "Anton",
       lastname: "Mueller",
       telephone: "+491755766634",

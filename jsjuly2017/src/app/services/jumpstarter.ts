@@ -1,4 +1,5 @@
 export class Jumpstarter {
+    id: number;
     firstname: string = "";
     lastname: string = "";
     telephone: string = "";
