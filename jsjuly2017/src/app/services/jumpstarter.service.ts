@@ -6,12 +6,12 @@ import { JUMPSTARTER } from './mock-jumpstarter';
 @Injectable()
 export class JumpstarterService{
 
-  jumpstarter:Jumpstarter[] = JUMPSTARTER;
+  jumpstarters:Jumpstarter[] = JUMPSTARTER;
 
   constructor() { }
 
   getJumpstarters(){
-    return this.jumpstarter;
+    return this.jumpstarters;
   }
 
   addJumpstarter(jumpstarter:Jumpstarter){
@@ -19,6 +19,6 @@ export class JumpstarterService{
   }
 
   getJumpstarterById(id){
-
+      return this.jumpstarters[id];
   }
 }
