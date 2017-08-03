@@ -12,6 +12,7 @@ export class PlaygroundComponent implements OnInit {
 
   jumpstarters: Jumpstarter[] =  JUMPSTARTER;
   jumpstarter: Jumpstarter;
+  homeoffice: string;
 
   constructor() { }
 

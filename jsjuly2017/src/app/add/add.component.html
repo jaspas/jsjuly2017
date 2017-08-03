@@ -2,54 +2,51 @@
 <h1>
   Add a new JumpStartler!
 </h1>
-<form>
+
   <!-- Name-->
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon3">Name</span>
-    <input type="text" class="form-control" id="name" aria-describedby="basic-addon3">
+    <input [(ngModel)]="jumpstarter.firstname" type="text" class="form-control" id="name" aria-describedby="basic-addon3">
   </div>
 
 <!-- Last name-->
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon3">Last name</span>
-    <input type="text" class="form-control" id="last-name" aria-describedby="basic-addon3">
+    <input [(ngModel)]="jumpstarter.lastname" type="text" class="form-control" id="last-name" aria-describedby="basic-addon3">
   </div>
 
 <!-- Phone number -->
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon3">Phone#</span>
-  <input type="text" class="form-control" id="phone-number" aria-describedby="basic-addon3">
+  <input [(ngModel)]="jumpstarter.telephone" type="text" class="form-control" id="phone-number" aria-describedby="basic-addon3">
 </div>
 
 <!-- E-Mail -->
 <div class="input-group">
   <span class="input-group-addon" id="basic-addon3">@</span>
-  <input type="text" class="form-control" id="e-mail" aria-describedby="basic-addon3">
+  <input [(ngModel)]="jumpstarter.email" type="text" class="form-control" id="e-mail" aria-describedby="basic-addon3">
 </div>
 
 <!-- Jumpstart -->
 <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     JumpStart
     <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Java</a></li>
-    <li><a href="#">ABAP</a></li>
-    <li><a href="#">FICO</a></li>
-    <li><a href="#">Salesforce</a></li>
+    <li *ngFor="let start of starts"><a href="" (click)="jumpstarter.jumpstart=start">{{start}}</a></li>
   </ul>
 </div>
 
 <!-- Picture -->
-<div class="input-group">
+<!-- <div class="input-group">
   <span class="input-group-addon" id="basic-addon3">Picture</span>
-  <input type="file" class="form-control" id="picture" aria-describedby="basic-addon3">
-</div>
+  <input [(ngModel)]="jumpstarter.picture" type="file" class="form-control" id="picture" aria-describedby="basic-addon3">
+</div> -->
 
 <!-- Homeoffice -->
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+<!-- <div class="dropdown">
+  <button [(ngModel)]="jumpstarter.homeoffice" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     Homeoffice
     <span class="caret"></span>
   </button>
@@ -63,14 +60,13 @@
 </div>
 
 <div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Deutschland</button>
-  <button type="button" class="btn btn-default">Schweiz</button>
-  <button type="button" class="btn btn-default">Österreich</button>
-  <button type="button" class="btn btn-default">Russland</button>
+  <button (click)="land=Deutschland"  type="button" class="btn btn-default">Deutschland</button>
+  <button (click)="land=Schweiz" type="button" class="btn btn-default">Schweiz</button>
+  <button (click)="jumpstarter.cou=au" type="button" class="btn btn-default">Österreich</button>
+  <button (click)="land=Russland"type="button" class="btn btn-default">Russland</button>
   <img src="../assets/transp.png" class="flag flag-de" alt="Flagge" width="200"/>
 </div>
 <br>
 <div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default">Save</button>
-</div>
-</form>
+</div> -->
