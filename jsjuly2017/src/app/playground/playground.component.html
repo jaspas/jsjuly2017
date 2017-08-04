@@ -1,10 +1,19 @@
-<p>
+<!--<p>
 </p>
 
-<div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.lastname }}</div>
+<!--<input [(ngModel)]="searchTerm" /> {{searchTerm | uppercase}}--
+
+<div *ngFor="let jumpstarter of jumpstarters">{{ jumpstarter.lastname | uppercase }}
+<img src="{{jumpstarter.picture}}"/>
+
+{{jumpstarter.id | currency:'EUR':true }}
+</div>
 
 <ul>
-  <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname }}</li>
+  <li *ngFor="let jumpstarter of jumpstarters"> <span *ngIf="jumpstarter.firstname">{{ jumpstarter.firstname | lowercase }}</span>
+
+{{jumpstarter.telephone}}
+  </li>
 </ul>
 
 {{jumpstarters[0].firstname}}
@@ -19,3 +28,12 @@
 <a href="details/0">Details</a>
 
 <button (click)="test()">test</button>
+
+
+<ul>
+  <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname | lowercase }}</li>
+</ul>-->
+
+<input [(ngModel)]="cool" /> {{ cool | coolness }}
+
+<a href="tel:+491755766634">Jasmin</a>

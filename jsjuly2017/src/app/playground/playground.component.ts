@@ -5,6 +5,8 @@ import { Jumpstarter } from '../services/jumpstarter';
 
 import { JumpstarterService } from '../services/jumpstarter.service';
 
+
+
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -15,6 +17,8 @@ import 'rxjs/add/operator/switchMap';
 })
 export class PlaygroundComponent implements OnInit {
 
+  //this.leftpad = leftpad;
+
   id: number;
   jumpstarters: Jumpstarter[];
 
@@ -24,16 +28,21 @@ export class PlaygroundComponent implements OnInit {
   jumpstarter: Jumpstarter = { id: 99, firstname: "", lastname: "", telephone: "", email: "", jumpstart: "", picture: "", homeoffice: "", country: "" };
 
 
-
-  constructor(private jumpstarterService: JumpstarterService, private activatedRoute: ActivatedRoute) { }
+  /*
+  Constructor with dependency injected services
+  */
+  constructor(private jumpstarterService:JumpstarterService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    //Call of Service for Jumpstarters
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
 
+    //Getting route params
     this.activatedRoute.params.subscribe(params => {
-      this.id = +params['einhorn'];
+      console.log(params);
+      this.id = +params['id'];
       if (this.id >= 0) {
-        this.jumpstarter = this.jumpstarterService.getJumpstarterById(this.id);
+        //this.jumpstarter = this.jumpstarterService.getJumpstarterById(this.id);
       }
     });
   }
@@ -44,7 +53,7 @@ export class PlaygroundComponent implements OnInit {
   }
 
   test(){
-    var keys = Object.keys(this.jumpstarters)
+    var keys = Object.keys(this.jumpstarters[0])
 
     for(var i = 0; i < keys.length; i++){
       console.log(this.jumpstarters[keys[i]]);

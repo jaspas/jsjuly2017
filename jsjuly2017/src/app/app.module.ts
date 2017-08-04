@@ -8,14 +8,21 @@ import { DetailpageComponent } from './detailpage/detailpage.component';
 import { AddComponent } from './add/add.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ListComponent } from './list/list.component';
+import { CoolnessPipe } from './services/coolness.pipe';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/list', pathMatch: 'full' },
-  { path: 'list', component: ListComponent },
+  {
+    path: '',
+    redirectTo: '/list',
+    pathMatch: 'full'
+  },
+  {
+    path: 'list',
+    component: ListComponent
+  },
   { path: 'details',      component: DetailpageComponent },
   { path: 'details/:id',      component: DetailpageComponent },
-  {
-    path: 'add',
+  {path: 'add',
     component: AddComponent
   },
   {
@@ -23,7 +30,7 @@ const appRoutes: Routes = [
     component: PlaygroundComponent
   },
   {
-    path: 'playground/:einhorn',
+    path: 'playground/:id',
     component: PlaygroundComponent
   }
 ];
@@ -34,17 +41,30 @@ const appRoutes: Routes = [
     PlaygroundComponent,
     AddComponent,
     DetailpageComponent,
-    ListComponent
+    ListComponent,
+    CoolnessPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+/*
+,
+AngularFireModule.initializeApp({databaseURL: 'https://jsjuly2017.firebaseio.com'}),
+AngularFireDatabaseModule,
+*/
