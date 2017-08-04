@@ -5,7 +5,7 @@ import { Jumpstarter } from '../services/jumpstarter';
 
 import { JumpstarterService } from '../services/jumpstarter.service';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 
 import 'rxjs/add/operator/switchMap';
@@ -20,7 +20,7 @@ export class PlaygroundComponent implements OnInit {
 
   id: number;
   jumpstarters: Jumpstarter[];
-  fireJumpstarter: FirebaseListObservable<Jumpstarter[]>;
+  fireJumpstarter: FirebaseObjectObservable<Jumpstarter>;//any;//FirebaseListObservable<Jumpstarter[]>;
 
   dogs: string[] = ["max", "moritz", "otto"];
   cat = { name: "lucy", race: "BKH", gender: "female", age: 20 };
@@ -33,7 +33,7 @@ export class PlaygroundComponent implements OnInit {
   */
   constructor(private jumpstarterService:JumpstarterService, private activatedRoute: ActivatedRoute,
     private db:AngularFireDatabase) {
-  this.fireJumpstarter = db.list('/jumpstarter');
+  this.fireJumpstarter = db.object('/jumpstarter/0');
 
  }
 
@@ -45,7 +45,6 @@ export class PlaygroundComponent implements OnInit {
 
       this.fireJumpstarter.subscribe(jumpstarter =>{
       console.log(jumpstarter);
-      console.log(jumpstarter[0]);
     });
 
     //Getting route params
@@ -59,8 +58,16 @@ export class PlaygroundComponent implements OnInit {
   }
 
   addJumpstarter() {
-    console.log(this.jumpstarter);
-    this.jumpstarters.push(this.jumpstarter);
+    this.jumpstarter.lastname = "Muller";
+    this.jumpstarter.telephone = "123456";
+    this.jumpstarter.email = "max.muller@example.com";
+    this.jumpstarter.jumpstart = "ABAP";
+    this.jumpstarter.homeoffice = "Kronberg";
+    this.jumpstarter.country = "DE";
+
+
+    const itemObservable = this.db.list('/jumpstarter');
+    itemObservable.push(this.jumpstarter);
   }
 
   test(){

@@ -55,3 +55,11 @@
     "office": "Nurnberg"
   }]
 }
+
+<xml>
+<books>
+  <book>
+    <name>anton</name>
+    <title>gruene hasen</title>
+  </book>
+<books>

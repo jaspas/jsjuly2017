@@ -32,8 +32,16 @@
   <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname | lowercase }}</li>
 </ul>-->
 
-<ul>
+<!--<ul>
   <li *ngFor="let jumpstarter of fireJumpstarter | async">
     {{ jumpstarter.firstname }}
   </li>
-</ul>
+</ul>-->
+
+{{ fireJumpstarter }}
+
+{{ fireJumpstarter.firstname }}
+
+<input [(ngModel)]="jumpstarter.firstname"/>
+
+<button (click)="addJumpstarter()">Add Jumpstarter</button>
