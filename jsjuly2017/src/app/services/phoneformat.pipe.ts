@@ -10,7 +10,9 @@ export class PhoneformatPipe implements PipeTransform {
       var sub = value.substring(0, 4);
       value = value.substring(4, value.length);
       return sub + " " + value.trim().replace(/(.{3})/g, '$1 ');
-    } else { return value.trim().replace(/(.{3})/g, '$1 '); }
+    } else {
+      return value.trim().replace(/(.{3})/g, '$1 ');
+    }
 
   }
 

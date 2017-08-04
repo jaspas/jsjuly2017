@@ -9,6 +9,7 @@ import { AddComponent } from './add/add.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ListComponent } from './list/list.component';
 import { CoolnessPipe } from './services/coolness.pipe';
+import { CallPipe } from './services/call.pipe';
 import { PhoneformatPipe } from './services/phoneformat.pipe';
 
 const appRoutes: Routes = [
@@ -44,7 +45,11 @@ const appRoutes: Routes = [
     DetailpageComponent,
     ListComponent,
     CoolnessPipe,
+<<<<<<< HEAD
     PhoneformatPipe
+=======
+    CallPipe
+>>>>>>> 45d969809ea42ef6641292056d563dad56e594b0
   ],
   imports: [
     BrowserModule,
