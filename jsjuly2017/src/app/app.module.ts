@@ -45,11 +45,8 @@ const appRoutes: Routes = [
     DetailpageComponent,
     ListComponent,
     CoolnessPipe,
-<<<<<<< HEAD
-    PhoneformatPipe
-=======
+    PhoneformatPipe,
     CallPipe
->>>>>>> 45d969809ea42ef6641292056d563dad56e594b0
   ],
   imports: [
     BrowserModule,
