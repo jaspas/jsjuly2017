@@ -8,6 +8,9 @@ import { HomeofficeService } from '../services/homeoffice.service';
 
 import { RouterModule, Router } from '@angular/router';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -17,40 +20,50 @@ import { RouterModule, Router } from '@angular/router';
 export class ListComponent implements OnInit {
 
   jumpstarters: Jumpstarter[];
-
+  fireJumpstarter: FirebaseListObservable<Jumpstarter[]>;
   offices: Homeoffice[];
 
   search: string = "";
 
   constructor(private jumpstarterService: JumpstarterService,
     private homeofficeService: HomeofficeService,
-    private router: Router) { }
+    private router: Router, private db: AngularFireDatabase) {
+    this.fireJumpstarter = db.list('/jumpstarter');
+  }
 
   onSelect(jumpstarter: Jumpstarter) {
     this.router.navigate(['/details', jumpstarter.id]);
   }
 
-  addJumpstarter(){
+  addJumpstarter() {
     this.router.navigate(['/add']);
   }
 
-  filter(){
+  filter() {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
 
-    if(this.search != ""){
+    if (this.search != "") {
       this.search = this.search.toLowerCase();
-      
+
       this.jumpstarters = this.jumpstarters.filter(js => {
-        if(js.firstname.toLowerCase().includes(this.search) ||
-            js.lastname.toLowerCase().includes(this.search) ||
-            js.jumpstart.toLowerCase().includes(this.search)){
-              return true;
+        if (js.firstname.toLowerCase().includes(this.search) ||
+          js.lastname.toLowerCase().includes(this.search) ||
+          js.jumpstart.toLowerCase().includes(this.search)) {
+          return true;
         }
       });
     }
   }
 
   ngOnInit() {
+
+    this.jumpstarters = this.jumpstarterService.getJumpstarters();
+
+
+    this.fireJumpstarter.subscribe(jumpstarter => {
+      console.log(jumpstarter);
+    });
+
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
     this.offices = this.homeofficeService.getHomeoffices();
 
