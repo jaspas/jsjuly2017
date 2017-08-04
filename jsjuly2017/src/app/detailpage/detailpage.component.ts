@@ -4,6 +4,7 @@ import{ JUMPSTARTER } from '../services/mock-jumpstarter';
 import{ JumpstarterService } from '../services/jumpstarter.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { MailtoPipe } from '../mailto.pipe';
+import { AngularFireDatabase, FirebaseObjectObservable} from 'angularfire2/database';
 
 @Component({
   selector: 'app-detailpage',
@@ -13,24 +14,29 @@ import { MailtoPipe } from '../mailto.pipe';
 })
 export class DetailpageComponent implements OnInit {
 
+  id: number;
+  jumpstarter:FirebaseObjectObservable<Jumpstarter>;
+
   constructor(
     private jumpstarterService:JumpstarterService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private mailto: MailtoPipe) { }
-
-  jumpstarter:Jumpstarter;
+    private mailto: MailtoPipe,
+    private db:AngularFireDatabase) {
+      
+    }
 
   ngOnInit() {
-
     this.activatedRoute.params.subscribe(params => {
-
-      if (+params['id'] >= 0) {
-        this.jumpstarter = this.jumpstarterService.getJumpstarterById(+params['id']);
-      }else{
-        this.jumpstarter = this.jumpstarterService.getJumpstarterById(0);
-      }
+      this.id = +params['id'];
+      this.jumpstarter = this.db.object('/jumpstarter/'+this.id);
     });
+
+      // if (+params['id'] >= 0) {
+      //   this.jumpstarter = this.jumpstarterService.getJumpstarterById(+params['id']);
+      // }else{
+      //   this.jumpstarter = this.jumpstarterService.getJumpstarterById(0);
+      // }
   }
 
   navigateToList(){
