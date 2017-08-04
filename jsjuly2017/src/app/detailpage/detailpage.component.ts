@@ -23,13 +23,19 @@ export class DetailpageComponent implements OnInit {
     private router: Router,
     private mailto: MailtoPipe,
     private db:AngularFireDatabase) {
-      
+
     }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.id = +params['id'];
+      console.log(this.id);
       this.jumpstarter = this.db.object('/jumpstarter/'+this.id);
+
+//private jumpie:Jumpstarter;
+      this.jumpstarter.subscribe(jumpie => {
+        console.log(jumpie);
+      })
     });
 
       // if (+params['id'] >= 0) {

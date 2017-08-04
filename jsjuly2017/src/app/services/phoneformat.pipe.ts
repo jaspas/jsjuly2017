@@ -6,6 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PhoneformatPipe implements PipeTransform {
 
   transform(value: string, replace?: string): string {
+
+    if(!value)
+      return'';
     if (value.startsWith("0")) {
       var sub = value.substring(0, 4);
       value = value.substring(4, value.length);

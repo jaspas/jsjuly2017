@@ -1,21 +1,21 @@
 
 
-<h1>{{jumpstarter.firstname | async}} {{jumpstarter.lastname | async}}</h1>
+<h1>{{(jumpstarter| async)?.firstname }} {{(jumpstarter| async)?.lastname }}</h1>
 
 <div class="picture-flag parent">
-  <img src="../../assets/{{jumpstarter.picture}}" class="image1" width=200/>
-  <img src="../assets/transp.png" class="flag flag-{{jumpstarter.country}} image2" alt="Flagge">
+  <img src="../../assets/{{(jumpstarter| async)?.picture }}" class="image1" width=200/>
+  <img src="../assets/transp.png" class="flag flag-{{(jumpstarter| async)?.country}} image2" alt="Flagge">
 
 </div>
 
 <ul class="list-group">
-  <li class="list-group-item"><a href="{{jumpstarter.telephone | call}}">{{jumpstarter.telephone | phoneformat}}</a></li>
-<li class="list-group-item"> <a href= "{{jumpstarter.email | mailt}}"> {{jumpstarter.email}} </a> </li>
+  <li class="list-group-item"><a href="{{(jumpstarter| async)?.telephone | call}}">{{(jumpstarter| async)?.telephone | phoneformat}}</a></li>
+<li class="list-group-item"> <a href= "{{(jumpstarter| async)?.email | mailto}}"> {{(jumpstarter| async)?.email}} </a> </li>
   <!-- <li class="list-group-item">
-<img src="../assets/transp.png" class="flag flag-{{jumpstarter.country}}" alt="Flagge" width="200"/>
+<img src="../assets/transp.png" class="flag flag-{{(jumpstarter| async)?.country}}" alt="Flagge" width="200"/>
   </li> -->
-  <li class="list-group-item">{{jumpstarter.homeoffice | async}}</li>
-  <li class="list-group-item">{{jumpstarter.jumpstart | async}}</li>
+  <li class="list-group-item">{{(jumpstarter| async)?.homeoffice }}</li>
+  <li class="list-group-item">{{(jumpstarter| async)?.jumpstart }}</li>
 </ul>
 
 <button (click)="navigateToList()">Back to the list!</button>
