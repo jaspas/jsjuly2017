@@ -13,5 +13,3 @@ export class CoolnessPipe implements PipeTransform {
 }
 
 //{{ jumpstarter.telephone | telephone }}
-
-<a href="mailto:ss@ss.de">E-Mail</a>
