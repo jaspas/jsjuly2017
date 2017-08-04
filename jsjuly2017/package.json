@@ -21,7 +21,6 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angular-pipes": "file:node_modules/angular-pipes",
     "angularfire2": "^4.0.0-rc.1",
     "core-js": "^2.4.1",
     "firebase": "^4.2.0",
