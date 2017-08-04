@@ -17,7 +17,6 @@ export class JumpstarterService {
   addJumpstarter(jumpstarter: Jumpstarter) {
     jumpstarter.id = this.getNewId();
     this.jumpstarters.push(jumpstarter);
-    console.log(this.jumpstarters.length);
     return jumpstarter.id;
   }
 
