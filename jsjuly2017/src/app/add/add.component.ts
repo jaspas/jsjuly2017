@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Jumpstarter } from '../services/jumpstarter';
 import { JumpstarterService } from '../services/jumpstarter.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MailtoPipe } from '../mailto.pipe';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css'],
-  providers: [JumpstarterService]
+  providers: [JumpstarterService, MailtoPipe]
 })
 export class AddComponent implements OnInit {
 
@@ -26,10 +27,10 @@ export class AddComponent implements OnInit {
 
   addJumpstarter(){
     this.jumpstarter.country = this.land;
-    this.id =  this.jumpstarterService.addJumpstarter(this.jumpstarter);
+    //this.jumpstarter.email = this.mailtoPipe.transform(this.jumpstarter.email);
+    this.id = this.jumpstarterService.addJumpstarter(this.jumpstarter);
     this.jumpstarter = new Jumpstarter;
     this.router.navigate(["/list/"]);
-    //console.log("id: " + this.id);
   }
 
   dropdownClicked(start: string){
@@ -41,7 +42,9 @@ export class AddComponent implements OnInit {
   }
 
   constructor(private jumpstarterService: JumpstarterService, private activatedRoute: ActivatedRoute,
-  private router:Router) { }
+  private router:Router, private mailtoPipe: MailtoPipe) {
+
+  }
 
   ngOnInit() {
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
@@ -55,8 +58,8 @@ export class AddComponent implements OnInit {
   }
 
   addJumpstarterRedirect(){
-
       this.jumpstarter.country = this.land;
+      //this.jumpstarter.email = this.mailtoPipe.transform(this.jumpstarter.email);
       this.id =  this.jumpstarterService.addJumpstarter(this.jumpstarter);
       this.jumpstarter = new Jumpstarter;
       //newJumpstarter = this.jumpstarterService.getJumpstarters[this.jumpstarterService.getJumpstarters().length-1];
