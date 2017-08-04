@@ -1,6 +1,6 @@
 
 
-<h1>{{jumpstarter.firstname}} {{jumpstarter.lastname}}</h1>
+<h1>{{jumpstarter.firstname | async}} {{jumpstarter.lastname | async}}</h1>
 
 <div class="picture-flag parent">
   <img src="../../assets/{{jumpstarter.picture}}" class="image1" width=200/>
@@ -10,12 +10,12 @@
 
 <ul class="list-group">
   <li class="list-group-item"><a href="{{jumpstarter.telephone | call}}">{{jumpstarter.telephone | phoneformat}}</a></li>
-<li class="list-group-item"> <a href= "{{jumpstarter.email | mailto}}"> {{jumpstarter.email}} </a> </li>
+<li class="list-group-item"> <a href= "{{jumpstarter.email | mailt}}"> {{jumpstarter.email}} </a> </li>
   <!-- <li class="list-group-item">
 <img src="../assets/transp.png" class="flag flag-{{jumpstarter.country}}" alt="Flagge" width="200"/>
   </li> -->
-  <li class="list-group-item">{{jumpstarter.homeoffice}}</li>
-  <li class="list-group-item">{{jumpstarter.jumpstart}}</li>
+  <li class="list-group-item">{{jumpstarter.homeoffice | async}}</li>
+  <li class="list-group-item">{{jumpstarter.jumpstart | async}}</li>
 </ul>
 
 <button (click)="navigateToList()">Back to the list!</button>
