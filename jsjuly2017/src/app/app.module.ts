@@ -9,6 +9,7 @@ import { AddComponent } from './add/add.component';
 import { PlaygroundComponent } from './playground/playground.component';
 import { ListComponent } from './list/list.component';
 import { CoolnessPipe } from './services/coolness.pipe';
+import { PhoneformatPipe } from './services/phoneformat.pipe';
 
 const appRoutes: Routes = [
   {
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     AddComponent,
     DetailpageComponent,
     ListComponent,
-    CoolnessPipe
+    CoolnessPipe,
+    PhoneformatPipe
   ],
   imports: [
     BrowserModule,
