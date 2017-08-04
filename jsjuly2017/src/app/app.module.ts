@@ -13,6 +13,9 @@ import { CallPipe } from './services/call.pipe';
 import { PhoneformatPipe } from './services/phoneformat.pipe';
 import { MailtoPipe } from './mailto.pipe';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -53,6 +56,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    AngularFireModule.initializeApp({databaseURL: 'https://jsjuly2017.firebaseio.com'}),
+    AngularFireDatabaseModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only

@@ -20,7 +20,6 @@
 
 <input [(ngModel)]="jumpstarter.firstname" value=""/> <button (click)=addJumpstarter()>Add</button> {{ jumpstarter.firstname }}
 
-
 <img src="assets/Degu.jpg" width=300/>
 
 <span style="background-color:green;" *ngIf="jumpstarter.firstname"> {{jumpstarter.firstname}}</span>
@@ -29,11 +28,12 @@
 
 <button (click)="test()">test</button>
 
-
 <ul>
   <li *ngFor="let jumpstarter of jumpstarters"> {{ jumpstarter.firstname | lowercase }}</li>
 </ul>-->
 
-<input [(ngModel)]="cool" /> {{ cool | coolness }}
-
-<a href="tel:{{jumpstarter.telephone}}">Jasmin</a>
+<ul>
+  <li *ngFor="let jumpstarter of fireJumpstarter | async">
+    {{ jumpstarter.firstname }}
+  </li>
+</ul>

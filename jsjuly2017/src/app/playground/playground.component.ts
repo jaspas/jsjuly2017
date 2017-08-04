@@ -5,6 +5,7 @@ import { Jumpstarter } from '../services/jumpstarter';
 
 import { JumpstarterService } from '../services/jumpstarter.service';
 
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 
 import 'rxjs/add/operator/switchMap';
@@ -17,10 +18,9 @@ import 'rxjs/add/operator/switchMap';
 })
 export class PlaygroundComponent implements OnInit {
 
-  //this.leftpad = leftpad;
-
   id: number;
   jumpstarters: Jumpstarter[];
+  fireJumpstarter: FirebaseListObservable<Jumpstarter[]>;
 
   dogs: string[] = ["max", "moritz", "otto"];
   cat = { name: "lucy", race: "BKH", gender: "female", age: 20 };
@@ -31,11 +31,22 @@ export class PlaygroundComponent implements OnInit {
   /*
   Constructor with dependency injected services
   */
-  constructor(private jumpstarterService:JumpstarterService, private activatedRoute: ActivatedRoute) { }
+  constructor(private jumpstarterService:JumpstarterService, private activatedRoute: ActivatedRoute,
+    private db:AngularFireDatabase) {
+  this.fireJumpstarter = db.list('/jumpstarter');
+
+ }
+
 
   ngOnInit() {
     //Call of Service for Jumpstarters
     this.jumpstarters = this.jumpstarterService.getJumpstarters();
+
+
+      this.fireJumpstarter.subscribe(jumpstarter =>{
+      console.log(jumpstarter);
+      console.log(jumpstarter[0]);
+    });
 
     //Getting route params
     this.activatedRoute.params.subscribe(params => {
