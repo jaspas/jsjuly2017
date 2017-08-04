@@ -12,6 +12,7 @@ import { CoolnessPipe } from './services/coolness.pipe';
 import { CallPipe } from './services/call.pipe';
 import { PhoneformatPipe } from './services/phoneformat.pipe';
 import { MailtoPipe } from './mailto.pipe';
+
 const appRoutes: Routes = [
   {
     path: '',
@@ -45,12 +46,9 @@ const appRoutes: Routes = [
     DetailpageComponent,
     ListComponent,
     CoolnessPipe,
-<<<<<<< HEAD
-    MailtoPipe
-=======
+    MailtoPipe,
     PhoneformatPipe,
     CallPipe
->>>>>>> b0275e7dec2806e60d506300932fd57e6a773bbf
   ],
   imports: [
     BrowserModule,

@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Jumpstarter } from '../services/jumpstarter';
 import { JumpstarterService } from '../services/jumpstarter.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { MailtoPipe } from '../mailto.pipe';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css'],
-  providers: [JumpstarterService, MailtoPipe]
+  providers: [JumpstarterService]
 })
 export class AddComponent implements OnInit {
 
@@ -42,7 +41,7 @@ export class AddComponent implements OnInit {
   }
 
   constructor(private jumpstarterService: JumpstarterService, private activatedRoute: ActivatedRoute,
-  private router:Router, private mailtoPipe: MailtoPipe) {
+  private router:Router) {
 
   }
 
