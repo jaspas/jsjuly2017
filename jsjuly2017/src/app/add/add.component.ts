@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Jumpstarter } from '../services/jumpstarter';
+import { Country} from'../services/country';
+import { Homeoffice} from '../services/homeoffice';
 import { JumpstarterService } from '../services/jumpstarter.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-add',
@@ -17,9 +22,9 @@ export class AddComponent implements OnInit {
   homeoffice: string;
   land: string = 'DE';
 
-  countries : string[] = ["DE", "AT", "CH", "RU"];
+  countries: FirebaseListObservable<Country[]>;
   starts : string[] =["Big Data", "Business Analysis & Testing","H&PS","Infrastructure", "Interactice", "IT Change Management", "Java","PCS","Pega", "PLM", "Sales Forces", "SAP Analytics", "SAP ABAP", "SAP CRM", "SAP FICO", "SAP Fundamentals", "SAP SCM","Talent & HR", "Visualitation"];
-  homeoffices: string[] = ["Kronberg", "Munich", "Dusseldorf", "Frankfurt", "Zurich", "Berlin", "Nuremberg", "Hamburg", "WienVienna", "Zurich"];
+  homeoffices: FirebaseListObservable<Homeoffice[]>;
 
   id: number = -1;
   jumpstarters: Jumpstarter[];
@@ -40,9 +45,10 @@ export class AddComponent implements OnInit {
     this.land = country;
   }
 
-  constructor(private jumpstarterService: JumpstarterService, private activatedRoute: ActivatedRoute,
+  constructor(private db: AngularFireDatabase, private jumpstarterService: JumpstarterService, private activatedRoute: ActivatedRoute,
   private router:Router) {
-
+    this.countries = db.list('/countries');
+    this.homeoffices = db.list('/homeoffice');
   }
 
   ngOnInit() {

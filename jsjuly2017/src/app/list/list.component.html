@@ -37,7 +37,7 @@
   </thead>
   <!-- Tabelle -->
   <tbody>
-    <tr *ngFor="let jumpstarter of jumpstarters" (click)="onSelect(jumpstarter)">
+    <tr *ngFor="let jumpstarter of fireJumpstarter | async" (click)="onSelect(jumpstarter)">
 
       <td>
         <div class=" item ">
